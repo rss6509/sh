@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>app</title>
+    <script src=" https://unpkg.com/vue/dist/vue.min.js"></script>
+
+</head>
+<body>
+
+  <template>
+    <div>
+      <div class="header">
+          <h1 class="header Text">INFO_Num</h1>
+          <nav>
+              <ul>
+                  <li>
+                      <router-link to="/home">Home</router-link>
+                  </li>
+                  <li>
+                        <router-link to="/about">About</router-link>
+                  </li>
+                  <li>
+                        <router-link to="/contacts">Contacts</router-link>
+                  </li>
+              </ul>
+          </nav>
+    </div>
+
+    <div class="container">
+        <route-view></route-view>
+    </div>
+    </div>
+  </template>
+
+  <scipt>
+      import Home from './components/Home.vue';
+      import About from './components/About.vue';
+      import Contacts from './components/Contacts.vue';
+      import VueRouter from 'vue-router';
+
+      const router = new VueRouter({
+          routes:[
+          { path:'/',component:Home }
+          { path:'/home',component:Home }
+          { path:'/about',component:About }
+          { path:'/contacts',component:Contacts }
+
+          ]
+      })
+
+      export default{
+          name:'app',
+          router
+      }
+  </scipt>
+
+</body>
+
+</html>
